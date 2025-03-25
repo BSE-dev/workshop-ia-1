@@ -1,7 +1,8 @@
 {
     "dependencies": ["."],
     "graphs": {
-      "conv_agent": "./conv_agent.py:graph"
+      "conv_agent": "./conv_agent.py:graph",
+      "conv_agent_with_tools": "./conv_agent_with_tools.py:graph"
     },
     "env": ".env"
 }

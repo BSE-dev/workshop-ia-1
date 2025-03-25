@@ -12,6 +12,8 @@ langchain = "^0.3.21"
 langchain-openai = "^0.3.10"
 langgraph = "^0.3.20"
 dotenv = "^0.9.9"
+langchain-community = "^0.3.20"
+tavily-python = "^0.5.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"

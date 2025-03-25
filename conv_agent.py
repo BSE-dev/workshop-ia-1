@@ -16,15 +16,18 @@ load_dotenv()
 
 
 class State(TypedDict):
+    """LangGraph State"""
     messages: Annotated[list, add_messages]
 
 
+# Prompt
 chat_prompt = ChatPromptTemplate.from_messages([
     ("system", ("You are a helpful AI assistant providing support for a series of "
                 "workshops for AI engineers in Brest.")),
     MessagesPlaceholder("messages")
 ])
 
+# LLM model
 # Select the appropriate chat model based on available API keys
 chat_model: AzureChatOpenAI | ChatOpenAI | None = None
 if os.getenv("AZURE_OPENAI_API_KEY"):
@@ -43,13 +46,16 @@ else:
           "AZURE_OPENAI_API_KEY in your environment variables.")
     sys.exit(1)
 
+# Chain
 chat_chain = chat_prompt | chat_model
 
 
+# Chatbot node
 def chatbot(state: State):
     return {"messages": [chat_chain.invoke({"messages": state["messages"]})]}
 
 
+# Graph
 graph_builder = StateGraph(State)
 graph_builder.add_node("chatbot", chatbot)
 graph_builder.add_edge(START, "chatbot")
