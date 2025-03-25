@@ -1,0 +1,7 @@
+{
+    "dependencies": ["."],
+    "graphs": {
+      "conv_agent": "./conv_agent.py:graph"
+    },
+    "env": ".env"
+}

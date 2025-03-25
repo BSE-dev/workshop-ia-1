@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "workshop-ia-1"
+version = "0.1.0"
+description = "Toutes les resources pour le Workshop IA #1"
+authors = ["GuirriecP <pierre.guirriec@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.3.21"
+langchain-openai = "^0.3.10"
+langgraph = "^0.3.20"
+dotenv = "^0.9.9"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+notebook = "^7.3.3"
+langgraph-cli = "^0.1.79"
+langgraph-sdk = "^0.1.58"
+langgraph-api = "^0.0.34"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

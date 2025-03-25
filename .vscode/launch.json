@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach Debugger to LangGraph",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+              "host": "0.0.0.0",
+              "port": 5678
+            }
+        }
+    ]
+}
